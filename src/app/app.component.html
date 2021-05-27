@@ -1,5 +1,21 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
 
-<div class="toolbar" role="banner">
-  <span style="margin-left: 40px;">HELLO</span>
-</div>
+<body>
+  <div class="toolbar">
+    <nav mat-tab-nav-bar backgroundColor="primary">
+      <a
+        mat-tab-link
+        *ngFor="let link of links"
+        (click)="activeLink = link"
+        [active]="activeLink == link"
+      >
+        {{ link }}
+      </a>
+    </nav>
+  </div>
+  <mat-card class="card">{{ activeLink }}</mat-card>
+  <app-foo></app-foo>
+</body>
